@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Hero from './components/Hero/Hero.jsx';
 import styles from './App.module.css';
-import { fetchAllData } from './helpers/api.jsx';
-import { songs } from './helpers/api.jsx';
+import { fetchAllData, songs } from './helpers/api.jsx';
+// import { songs } from './helpers/api.jsx';
 import Section from './components/Section/Section.jsx';
 import FilterSection from './components/FilterSection/FilterSection';
 
 function App() {
-  const [albumData, setAlbumData] = useState({ topAlbums: [], newAlbums: [] });
+  const [albumData, setAlbumData] = useState({ topAlbums: [], newAlbums: [], songs: [] });
   const [toggle, setToggle] = useState(false);
   const [value, setValue] = useState(0);
 
@@ -20,10 +20,13 @@ function App() {
     setValue(newValue);
   };
 
+  // console.log(songs.length);
+  
+
   const fetchData = async () => {
     try {
-      const { topAlbums, newAlbums } = await fetchAllData();
-      setAlbumData({ topAlbums, newAlbums });
+      const { topAlbums, newAlbums, songs } = await fetchAllData();
+      setAlbumData({ topAlbums, newAlbums, songs });
     } catch (error) {
       console.log(error);
     }
@@ -33,7 +36,7 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(albumData.songs, albumData.newAlbums, albumData.topAlbums);
+  // console.log(albumData.songs, albumData.newAlbums, albumData.topAlbums);
   
 
   return (
