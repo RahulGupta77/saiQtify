@@ -47,7 +47,7 @@ function App() {
         <Section type="album" title="Top Albums" data={albumData.topAlbums} />
         <Section type="album" title="New Albums" data={albumData.newAlbums} />
         <FilterSection
-          data={songs}
+          data={albumData.songs}
           type="song"
           title="Songs"
           value={value}

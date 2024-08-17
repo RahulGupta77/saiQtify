@@ -78,6 +78,7 @@ export default function BasicTabs({ data, value, handleChange, type, filteredDat
     }, [value]);
 
     const handleTabChange = (event, newValue) => {
+        console.log(newValue); 
         setTabValue(newValue);
         handleChange(event, newValue);
     };
