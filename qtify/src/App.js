@@ -44,12 +44,12 @@ function App() {
       <Navbar searchData={albumData.newAlbums} />
       <Hero />
       <div className={styles.sectionWrapper}>
-        <Section type='album' title='Top Albums' data={albumData.topAlbums} />
-        <Section type='album' title='New Albums' data={albumData.newAlbums} />
+        <Section type="album" title="Top Albums" data={albumData.topAlbums} />
+        <Section type="album" title="New Albums" data={albumData.newAlbums} />
         <FilterSection
           data={songs}
-          type='songFilter'
-          title='Songs'
+          type="song"
+          title="Songs"
           value={value}
           handleChange={handleChange}
           handleToggle={handleToggle}
